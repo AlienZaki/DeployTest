@@ -14,11 +14,11 @@ FROM python:3.8
 # set display port to avoid crash
 ENV DISPLAY=:99
 
-RUN pip install pipenv --upgrade
+#RUN pip install pipenv --upgrade
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-COPY ./Pipfile /usr/src/app
+#COPY ./Pipfile /usr/src/app
 #RUN pipenv lock --requirements > requirements.txt
 
 
