@@ -1,4 +1,4 @@
-FROM python:3.9
+FROM python:3.8
 
 # install google chrome
 #RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
@@ -27,5 +27,5 @@ COPY . /usr/src/app
 EXPOSE 80
 COPY ./runserver.sh /usr/local/bin/
 #CMD ["runserver.sh"]
-#CMD ["sh", "runserver.sh"]
-CMD ["python", "manage.py", "runserver"]
+CMD ["sh", "runserver.sh"]
+#CMD ["python", "manage.py", "runserver"]
