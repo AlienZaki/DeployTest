@@ -14,20 +14,19 @@ FROM python:3.8
 # set display port to avoid crash
 ENV DISPLAY=:99
 
-#RUN pip install pipenv --upgrade
+# set work directory
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-#COPY ./Pipfile /usr/src/app
-#RUN pipenv lock --requirements > requirements.txt
-
-
+# copy all project files to our work directory
 COPY . /usr/src/app
 
+# install requirements
 RUN pip install -r requirements.txt
 
 EXPOSE 80
 COPY ./runserver.sh /usr/local/bin/
-#CMD ["runserver.sh"]
-CMD ["sh", "runserver.sh"]
-#CMD ["python", "manage.py", "runserver"]
+
+# run - migrate, load data, and run
+CMD ["runserver.sh"]
+
