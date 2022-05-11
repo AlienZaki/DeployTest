@@ -27,3 +27,4 @@ COPY . /usr/src/app
 EXPOSE 80
 COPY ./runserver.sh /usr/local/bin/
 CMD ["runserver.sh"]
+CMD ["sh", "./runserver.sh"]
